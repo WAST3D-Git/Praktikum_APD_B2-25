@@ -1,0 +1,85 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="4.2">
+    <attributes>
+        <attribute name="name" value="PT3"/>
+        <attribute name="authors" value=""/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2025-09-27 08:49:52 PM"/>
+        <attribute name="created" value="QVNVUy1HSztMQVBUT1AtVDFRRExKNk07MjAyNS0wOS0yNzswODo0MjowNCBQTTsyODY4"/>
+        <attribute name="edited" value="QVNVUy1HSztMQVBUT1AtVDFRRExKNk07MjAyNS0wOS0yNzswODo0OTo1MiBQTTsxOzI5ODY="/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="nama, inputNama" type="String" array="False" size=""/>
+            <declare name="nim, inputNim, ukt, pilihan" type="Integer" array="False" size=""/>
+            <declare name="totalBayar, cicilan" type="Real" array="False" size=""/>
+            <assign variable="nama" expression="&quot;Muhammad Ihsan Rosadi&quot;"/>
+            <assign variable="nim" expression="2509106081"/>
+            <assign variable="ukt" expression="6000000"/>
+            <output expression="&quot;Masukkan nama: &quot;" newline="False"/>
+            <input variable="inputNama"/>
+            <output expression="&quot;Masukkan NIM: &quot;" newline="False"/>
+            <input variable="inputNim"/>
+            <if expression="inputNama = nama &amp;&amp; inputNim = nim">
+                <then>
+                    <output expression="&quot;Login berhasil!&quot;" newline="True"/>
+                    <output expression="&quot;===================================&quot;" newline="True"/>
+                    <output expression="&quot;Opsi pembayaran UKT: &quot;" newline="True"/>
+                    <output expression="&quot;1. Lunas: Biaya administrasi 1%&quot;" newline="True"/>
+                    <output expression="&quot;2. Cicilan 2x: Biaya administrasi 5%&quot;" newline="True"/>
+                    <output expression="&quot;3. Cicilan 4x: Biaya administrasi 8%&quot;" newline="True"/>
+                    <output expression="&quot;4. Cicilan 6x: Biaya administrasi 12%&quot;" newline="True"/>
+                    <output expression="&quot;Pilih opsi pembayaran (1-4): &quot;" newline="False"/>
+                    <input variable="pilihan"/>
+                    <if expression="pilihan = 1">
+                        <then>
+                            <assign variable="totalBayar" expression="ukt + (ukt * 0.01)"/>
+                            <output expression="&quot;Total yang harus dibayar (Lunas): Rp &quot; &amp; totalBayar" newline="True"/>
+                        </then>
+                        <else>
+                            <if expression="pilihan = 2">
+                                <then>
+                                    <assign variable="totalBayar" expression="ukt + (ukt * 0.05)"/>
+                                    <assign variable="cicilan" expression="totalBayar / 2"/>
+                                    <output expression="&quot;Total yang harus dibayar (Cicilan 2x): Rp &quot; &amp; totalBayar &amp; &quot;, Cicilan per bulan: Rp &quot; &amp; cicilan" newline="True"/>
+                                </then>
+                                <else>
+                                    <if expression="pilihan = 3">
+                                        <then>
+                                            <assign variable="totalBayar" expression="ukt + (ukt * 0.08)"/>
+                                            <assign variable="cicilan" expression="totalBayar / 4"/>
+                                            <output expression="&quot;Total yang harus dibayar (Cicilan 4x): Rp &quot; &amp; totalBayar &amp; &quot;, Cicilan per bulan: Rp &quot; &amp; cicilan" newline="True"/>
+                                        </then>
+                                        <else>
+                                            <if expression="pilihan = 4">
+                                                <then>
+                                                    <assign variable="totalBayar" expression="ukt + (ukt * 0.12)"/>
+                                                    <assign variable="cicilan" expression="totalBayar / 6"/>
+                                                    <output expression="&quot;Total yang harus dibayar (Cicilan 6x): Rp &quot; &amp; totalBayar &amp; &quot;, Cicilan per bulan: Rp &quot; &amp; cicilan" newline="True"/>
+                                                </then>
+                                                <else>
+                                                    <output expression="&quot;Pilihan tidak tersedia&quot;" newline="True"/>
+                                                </else>
+                                            </if>
+                                        </else>
+                                    </if>
+                                </else>
+                            </if>
+                        </else>
+                    </if>
+                </then>
+                <else>
+                    <if expression="inputNama != nama &amp;&amp; inputNim != nim">
+                        <then>
+                            <output expression="&quot;Nama dan NIM tidak terdaftar&quot;" newline="True"/>
+                        </then>
+                        <else>
+                            <output expression="&quot;Nama atau NIM tidak terdaftar&quot;" newline="True"/>
+                        </else>
+                    </if>
+                </else>
+            </if>
+        </body>
+    </function>
+</flowgorithm>
