@@ -1,0 +1,38 @@
+nama = "Muhammad Ihsan Rosadi"
+nim = 2509106081
+ukt= 6000000
+
+inputNama = str(input("Masukkan nama: "))
+inputNim = int(input("Masukkan NIM: "))
+
+if inputNama == nama and inputNim == nim:
+    print("Opsi pembayaran UKT: ")
+    print("1. Lunas: Biaya administrasi 1%")
+    print("2. Cicilan 2x: Biaya administrasi 5%")
+    print("3. Cicilan 4x: Biaya administrasi 8%")
+    print("4. Cicilan 6x: Biaya administrasi 12%")
+    pilihan = int(input("Pilih opsi pembayaran (1-4): "))
+
+    if pilihan == 1:
+        totalBayar = ukt + (ukt * 0.01)
+        print(f"Total yang harus dibayar (Lunas): Rp {int(totalBayar)}")
+    elif pilihan == 2:
+        totalBayar = ukt + (ukt * 0.05)
+        cicilan = totalBayar / 2
+        print(f"Total yang harus dibayar (Cicilan 2x): Rp {int(totalBayar)}, Cicilan per bulan: Rp {int(cicilan)}")
+    elif pilihan == 3:
+        totalBayar = ukt + (ukt * 0.08)
+        cicilan = totalBayar / 4
+        print(f"Total yang harus dibayar (Cicilan 4x): Rp {int(totalBayar)}, Cicilan per bulan: Rp {int(cicilan)}")
+    elif pilihan == 4:
+        totalBayar = ukt + (ukt * 0.12)
+        cicilan = totalBayar / 6
+        print(f"Total yang harus dibayar (Cicilan 6x): Rp {int(totalBayar)}, Cicilan per bulan: Rp {int(cicilan)}")
+    else:
+        print("Pilihan tidak tersedia")
+
+elif inputNama != nama and inputNim != nim:
+    print("Nama dan NIM tidak terdaftar")
+else:
+    print("Nama atau NIM tidak terdaftar")
+
