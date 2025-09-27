@@ -6,6 +6,8 @@ inputNama = str(input("Masukkan nama: "))
 inputNim = int(input("Masukkan NIM: "))
 
 if inputNama == nama and inputNim == nim:
+    print("Login berhasil!")
+    print("===================================")
     print("Opsi pembayaran UKT: ")
     print("1. Lunas: Biaya administrasi 1%")
     print("2. Cicilan 2x: Biaya administrasi 5%")
