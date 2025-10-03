@@ -46,3 +46,7 @@ class Nilai:
             return "D"  
         else:
             return "E"
+        
+nilai_akhir = Nilai(85)
+print(nilai_akhir.cek_nilai())
+

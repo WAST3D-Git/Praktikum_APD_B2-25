@@ -37,3 +37,4 @@ for i in range(1, 21):
         continue
     print(f'Angka genap telah ditemukan {i}')
 print('Program selesai')
+
