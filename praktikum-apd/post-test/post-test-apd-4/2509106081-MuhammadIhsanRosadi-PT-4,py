@@ -1,0 +1,138 @@
+nama = "Muhammad Ihsan Rosadi"
+nim = "2509106081"
+
+percobaan = 0
+maks_percobaan = 3
+login_berhasil = False
+
+print("==============================================")
+print("   SELAMAT DATANG DI TOKO FURNITUR INFORDEH  ")
+print("==============================================")
+
+while percobaan < maks_percobaan:
+    input_nama = input("Masukkan username (Nama): ")
+    input_nim = input("Masukkan password (NIM): ")
+
+    if input_nama == nama and input_nim == nim:
+        print(f"\nLogin berhasil! Selamat datang, {nama}")
+        login_berhasil = True
+        break
+    else:
+        percobaan += 1
+        sisa = maks_percobaan - percobaan
+        print(f"Login gagal! Sisa percobaan: {sisa}")
+        if sisa == 0:
+            print("\nAnda telah gagal login 3 kali. Program dihentikan.")
+            exit()
+
+if login_berhasil:
+    total_semua = 0
+
+    jumlah_sofa = 0
+    total_sofa = 0
+
+    jumlah_meja = 0
+    total_meja = 0
+
+    jumlah_rak = 0
+    total_rak = 0
+
+    print("\n=== MULAI PEMBELIAN ===")
+
+    while True:
+        print("\n========= MENU PEMBELIAN FURNITUR =========")
+        print("1. Sofa         - Rp 500000")
+        print("2. Meja Belajar - Rp 250000")
+        print("3. Rak Lemari   - Rp 150000")
+        print("4. Selesai & Tampilkan Struk")
+        print("===========================================")
+
+        pilihan = input("Pilih furnitur [1-4]: ")
+
+        if pilihan == "4":
+            if total_semua == 0:
+                print("\nAnda belum membeli apapun.")
+                print("Terima kasih telah mengunjungi Toko Furnitur Infordeh.")
+                break
+
+            potongan_total = 0
+            bonus = ""
+
+            if total_semua >= 700000:
+                potongan_total = total_semua * 0.20
+            elif total_semua >= 500000 and total_semua < 700000:
+                potongan_total = total_semua * 0.08
+            elif total_semua >= 150000 and total_semua < 500000:
+                bonus = "Kitchen Set"
+
+            total_akhir = total_semua - potongan_total
+
+            print("\n==============================================")
+            print("               STRUK PEMBELIAN                ")
+            print("==============================================")
+            print("No  Nama Barang        Jumlah   Harga Satuan     Total")
+            print("------------------------------------------------------")
+
+            nomor = 1
+            if jumlah_sofa > 0:
+                print(f"{nomor}.  Sofa               {jumlah_sofa}      x Rp500000     = Rp{int(total_sofa)}")
+                nomor += 1
+            if jumlah_meja > 0:
+                print(f"{nomor}.  Meja Belajar       {jumlah_meja}      x Rp250000     = Rp{int(total_meja)}")
+                nomor += 1
+            if jumlah_rak > 0:
+                print(f"{nomor}.  Rak Lemari         {jumlah_rak}       x Rp150000     = Rp{int(total_rak)}")
+
+            print("------------------------------------------------------")
+            print(f"Total Pembelian  : Rp{int(total_semua)}")
+
+            if potongan_total > 0:
+                print(f"Potongan Harga   : Rp{int(potongan_total)}")
+            if bonus != "":
+                print(f"Bonus            : {bonus}")
+
+            print("------------------------------------------------------")
+            print(f"Total Bayar Akhir: Rp{int(total_akhir)}")
+            print("\n==============================================")
+            print("  Terima kasih telah berbelanja di Infordeh!  ")
+            print("==============================================")
+            break
+
+        elif pilihan == "1":
+            jenis = "Sofa"
+            harga = 500000
+        elif pilihan == "2":
+            jenis = "Meja Belajar"
+            harga = 250000
+        elif pilihan == "3":
+            jenis = "Rak Lemari"
+            harga = 150000
+        else:
+            print("Pilihan tidak valid! Silakan pilih 1-4.")
+            continue
+
+        jumlah = input("Masukkan jumlah unit yang ingin dibeli: ")
+
+        if jumlah.isdigit():
+            jumlah = int(jumlah)
+        else:
+            print("Input jumlah harus berupa angka!")
+            continue
+
+        total = 0
+        for i in range(jumlah):
+            total += harga
+
+        total_semua += total
+
+        if pilihan == "1":
+            jumlah_sofa += jumlah
+            total_sofa += total
+        elif pilihan == "2":
+            jumlah_meja += jumlah
+            total_meja += total
+        elif pilihan == "3":
+            jumlah_rak += jumlah
+            total_rak += total
+
+        print(f"\nBerhasil menambahkan {jumlah} {jenis} ke keranjang.")
