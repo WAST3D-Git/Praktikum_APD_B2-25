@@ -38,3 +38,17 @@ for i in range(1, 21):
     print(f'Angka genap telah ditemukan {i}')
 print('Program selesai')
 
+while True:
+    print("1. Menu 1")
+    print("2. Menu 2")
+    print("3. Menu 3")
+    opsi = int(input("Pilih menu (1/2/3): "))
+    if opsi == 1:
+        print("Anda memilih menu 1")
+    elif opsi == 2:
+        print("Anda memilih menu 2")
+    elif opsi == 3:
+        print("Anda memilih menu 3")
+    else:
+        print("Opsi tidak valid, silakan coba lagi.")
+        continue
