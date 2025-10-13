@@ -1,6 +1,5 @@
 import os
 
-# Data awal
 users = [["mihsanr81", "2509106081", "admin"]] 
 projects = [] 
 
@@ -12,7 +11,7 @@ while True:
     print("3. Keluar")
     menu = input("Pilih menu: ")
 
-    # ==================== LOGIN ====================
+    # LOGIN
     if menu == "1":
         os.system('cls' if os.name == 'nt' else 'clear')
         print("=== LOGIN ===")
@@ -118,14 +117,14 @@ while True:
                                 elif pilih_update == "7":
                                     break
                                 else:
-                                    print("Pilihan tidak valid.")
+                                    print("Pilihan tidak valid!")
                                     input("Tekan Enter Untuk Melanjutkan...")
 
                             print("Data proyek berhasil diperbarui!")
                         else:
-                            print("Nomor proyek tidak valid.")
+                            print("Nomor proyek tidak valid!")
                     else:
-                        print("Input harus angka.")
+                        print("Input harus angka!")
                     input("Tekan Enter Untuk Melanjutkan...")
 
                 # DELETE
@@ -157,7 +156,7 @@ while True:
                 elif pilih == "5":
                     break
                 else:
-                    print("Pilihan salah.")
+                    print("Pilihan tidak valid!")
                     input("Tekan Enter Untuk Melanjutkan...")
 
         # USER BIASA
@@ -186,7 +185,7 @@ while True:
                 elif pilih_user == "2":
                     break
                 else:
-                    print("Pilihan salah.")
+                    print("Pilihan tidak valid!")
                     input("Tekan Enter Untuk Melanjutkan...")
 
     # REGISTER
