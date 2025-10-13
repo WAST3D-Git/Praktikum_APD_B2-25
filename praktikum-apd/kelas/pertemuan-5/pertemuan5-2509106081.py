@@ -42,6 +42,7 @@ print(anggota)
 print(anggota[1])
 print(anggota[-1])
 
+
 barang = ('triangle','bola', 'meja', 'handphone', 'televisi')
 (segitiga, bulat, *kotak) = barang
 print(segitiga)
