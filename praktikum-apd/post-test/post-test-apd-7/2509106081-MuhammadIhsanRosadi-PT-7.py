@@ -20,21 +20,6 @@ def tampilkan_menu_awal():
     print("3. Keluar")
     return input("Pilih menu: ")
 
-def lihat_proyek():
-    clear_screen()
-    print("=== DAFTAR PROYEK ===")
-    if len(projects) == 0:
-        print("Belum ada proyek.")
-    else:
-        for i, p in enumerate(projects):
-            print(f"\n[{i+1}] {p['judul']}")
-            print(f"Deskripsi: {p['deskripsi']}")
-            print(f"Software : {p['software']}")
-            print(f"Deadline : {p['deadline']}")
-            print(f"Klien    : {p['klien']}")
-            print(f"Status   : {p['status']}")
-    pause()
-
 def tambah_proyek(username):
     global projects
     clear_screen()
@@ -64,6 +49,21 @@ def tambah_proyek(username):
         print(e)
     finally:
         pause()
+
+def lihat_proyek():
+    clear_screen()
+    print("=== DAFTAR PROYEK ===")
+    if len(projects) == 0:
+        print("Belum ada proyek.")
+    else:
+        for i, p in enumerate(projects):
+            print(f"\n[{i+1}] {p['judul']}")
+            print(f"Deskripsi: {p['deskripsi']}")
+            print(f"Software : {p['software']}")
+            print(f"Deadline : {p['deadline']}")
+            print(f"Klien    : {p['klien']}")
+            print(f"Status   : {p['status']}")
+    pause()
 
 def update_proyek(index):
     global projects
@@ -179,6 +179,22 @@ def menu_admin():
 
     menu_admin()
 
+def menu_pengguna():
+    while True:
+        clear_screen()
+        print(f"=== MENU PENGGUNA ({user_ditemukan['username']}) ===")
+        print("1. Lihat Proyek")
+        print("2. Logout")
+        pilih_user = input("Pilih: ")
+
+        if pilih_user == "1":
+            lihat_proyek()
+        elif pilih_user == "2":
+            break
+        else:
+            print("Pilihan tidak valid!")
+            pause()
+
 def login():
     global user_ditemukan
     clear_screen()
@@ -217,22 +233,6 @@ def register():
         users.append({"username": username, "password": password, "role": "user"})
         print("Akun berhasil dibuat!")
     pause()
-
-def menu_pengguna():
-    while True:
-        clear_screen()
-        print(f"=== MENU PENGGUNA ({user_ditemukan['username']}) ===")
-        print("1. Lihat Proyek")
-        print("2. Logout")
-        pilih_user = input("Pilih: ")
-
-        if pilih_user == "1":
-            lihat_proyek()
-        elif pilih_user == "2":
-            break
-        else:
-            print("Pilihan tidak valid!")
-            pause()
 
 def main():
     while True:
