@@ -1,0 +1,40 @@
+{
+  "users": {
+    "1": { "username": "mihsanr81", "password": "2509106081", "role": "admin" },
+    "2": { "username": "mihsanr69", "password": "2509106099", "role": "user" }
+  },
+  "projects": {
+    "1": {
+      "judul": "Desain Poster",
+      "deskripsi": "Poster untuk promosi acara musik",
+      "software": "Photoshop, Illustrator",
+      "deadline": "12 November",
+      "klien": "Event Organizer",
+      "status": "Dalam Proses"
+    },
+    "2": {
+      "judul": "Logo Sekolah",
+      "deskripsi": "Pembaruan logo sekolah",
+      "software": "Illustrator, CorelDraw",
+      "deadline": "10 November",
+      "klien": "SMK 15 Samarinda",
+      "status": "Selesai"
+    },
+    "3": {
+      "judul": "Infografis Covid-19",
+      "deskripsi": "Infografis tentang covid-19",
+      "software": "Canva",
+      "deadline": "11 November",
+      "klien": "Pemerintah Daerah",
+      "status": "Ditunda"
+    },
+    "4": {
+      "judul": "Desain Brosur Event",
+      "deskripsi": "Brosur untuk acara kampus tahunan",
+      "software": "InDesign",
+      "deadline": "13 November",
+      "klien": "Universitas Negeri",
+      "status": "Dalam Proses"
+    }
+  }
+}
