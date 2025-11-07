@@ -65,13 +65,12 @@ answer = inquirer.prompt(pertanyaan)
 print(answer) 
 print(answer['size'])
 
-import inquirer
+
 data = {
 'nama': [],
 'nim': [],
 'no_hp': []
 }
-
 def tambahData():
     questions = [
 inquirer.Text('nama', message="Input nama mu"),
